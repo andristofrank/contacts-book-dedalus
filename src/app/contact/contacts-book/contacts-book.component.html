@@ -1,0 +1,22 @@
+<div>
+    <h3>Contacts Book</h3>
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts$ | async; let i=index">
+                <td>{{i}}</td>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
