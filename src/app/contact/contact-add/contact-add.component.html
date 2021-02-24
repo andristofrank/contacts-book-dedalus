@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add Contact</h4>
+    <button type="button" class="close" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="contactForm" id="contactFormId" class="row g-3" (ngSubmit)="onSubmit()">
+        <div class="col-md-6">
+              <label for="firstNameInput" class="form-label">First Name: </label>
+              <input id="firstNameInput" class="form-control" type="text" formControlName="firstName">
+        </div>
+        <div class="col-md-6">
+            <label for="lastNameInput" class="form-label">Last Name:</label>
+            <input id="lastNameInput" class="form-control" type="text" formControlName="lastName">
+        </div>
+        <div class="col-md-6">
+            <label for="phoneNumberInput" class="form-label">Phone number:</label>
+            <input id="phoneNumberInput" class="form-control" type="text" formControlName="phone">
+        </div>
+        <div class="col-md-6">
+            <label for="emailInput" class="form-label">Email:</label>
+            <input id="emailInput" class="form-control" type="text" formControlName="email">
+        </div>
+        <div class="col-md-12">
+            <label for="addressInput" class="form-label">Address:</label>
+            <input id="addressInput" class="form-control" type="text" formControlName="address">
+        </div>
+      </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button"class="btn btn-light" (click)="close()">Close</button>
+    <button type="submit" form="contactFormId"  class="btn btn-success">Save contact</button>
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { select } from '@ngrx/store';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -14,11 +15,14 @@ import { selectContacts } from '../store/selector/contact.selectors';
 export class ContactsBookComponent implements OnInit {
   contacts$: Observable<Contact[]>;
 
-  constructor(private store: Store<ContactsBookState>) { 
+  constructor(private store: Store<ContactsBookState>, private modalService: NgbModal) { 
     this.contacts$ = this.store.pipe(select(selectContacts))
   }
 
   ngOnInit(): void {
+  }
+  openModal (content) {
+    this.modalService.open(content, {size: 'lg', centered: true});
   }
 
 }
