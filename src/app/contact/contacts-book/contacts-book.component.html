@@ -2,7 +2,7 @@
     <div class="d-flex flex-row mt-5 mb-3">
         <h3>Contacts Book</h3>
         <div class="ml-auto">
-            <button class="btn btn-primary">Register new contact</button>
+            <button class="btn btn-primary" (click)="openModal(addContactModalTemplate)">Add new contact</button>
         </div>
 </div>
 <div class="table-responsive">
@@ -25,4 +25,6 @@
 </div>
 </div>
 
-
+<ng-template #addContactModalTemplate>
+    <app-contact-add></app-contact-add>
+</ng-template>
