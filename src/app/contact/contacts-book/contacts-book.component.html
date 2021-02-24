@@ -1,0 +1,28 @@
+<div class="w-50 mx-3">
+    <div class="d-flex flex-row mt-5 mb-3">
+        <h3>Contacts Book</h3>
+        <div class="ml-auto">
+            <button class="btn btn-primary">Register new contact</button>
+        </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts$ | async; let i=index">
+                <td>{{i}}</td>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+

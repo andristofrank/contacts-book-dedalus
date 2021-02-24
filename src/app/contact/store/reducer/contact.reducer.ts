@@ -10,7 +10,9 @@ export interface ContactsBookState {
 }
 
 export const initialState: ContactsBookState = {
-  contacts: []
+  contacts: [
+    {lastName: 'Andrei', firstName: 'Maxi', phone: '2424325', address: 'sdbsf bfr', email: 'fcaevew@br'}
+  ]
 };
 
 
