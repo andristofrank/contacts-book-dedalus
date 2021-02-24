@@ -8,7 +8,6 @@ export const selectContactsBookState = createFeatureSelector<fromContact.Contact
 export const selectContacts = createSelector(
     selectContactsBookState,
     (state: fromContact.ContactsBookState) => {
-        console.log(fromContact);
         return state.contacts
     }
 );
