@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "contacts-book-dedalus"
+  "defaultProject": "contacts-book-dedalus",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
