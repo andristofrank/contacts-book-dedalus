@@ -12,6 +12,9 @@ import { ContactsBookState } from '../store/reducer/contact.reducer';
   styleUrls: ['./contact-add.component.scss']
 })
 export class ContactAddComponent implements OnInit {
+  addContact(newContact: { firstName: string; lastName: string; phone: string; address: string; email: string; }) {
+    throw new Error('Method not implemented.');
+  }
 
   contactForm = new FormGroup({
     firstName: new FormControl(''),

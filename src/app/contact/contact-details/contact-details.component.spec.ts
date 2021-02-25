@@ -19,8 +19,6 @@ describe('ContactDetailsComponent', () => {
     selectedContact: new Contact(),
   }
 
-  let modalServiceSpy =  jasmine.createSpyObj('NgbModal', ['dismissAll']);
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ContactDetailsComponent ],
@@ -29,7 +27,6 @@ describe('ContactDetailsComponent', () => {
           { selector: selectorContact,
             value: [{lastName: 'Andrei', firstName: 'Maxi', phone: '2424325', address: 'sdbsf bfr', email: 'fcaevew@br'}]}
         ]}),
-        {provide: NgbModal, useValue: modalServiceSpy}
       ]
     })
     .compileComponents();

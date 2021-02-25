@@ -29,7 +29,9 @@ describe('ContactsBookComponent', () => {
       declarations: [ ContactsBookComponent ],
       providers: [
         provideMockStore({initialState, selectors: [
-          { selector: selectorContactsSummary, value: [{lastName: 'Andrei', firstName: 'Maxi'}]}
+          { selector: selectorContactsSummary, value:
+            [{lastName: 'Andrei', firstName: 'Maxi'},
+          {lastName: 'Andrei', firstName: 'Maxi'}]}
         ]}),
         {provide: NgbModal, useValue: modalServiceSpy}
       ]
@@ -47,6 +49,11 @@ describe('ContactsBookComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
     expect(component.contacts$).toBeInstanceOf(Observable);
+  });
+
+  it('should have the initial state rows of data of 2 elements', () => {
+    const rows = fixture.nativeElement.querySelectorAll('tbody tr');
+    expect(rows.length).toBe(2);
   });
 
   it('should select a contact when selectContact is called', () => {

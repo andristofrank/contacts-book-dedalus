@@ -13,7 +13,8 @@ export const selectorContacts = createSelector(
 );
 export const selectorContactsSummary = createSelector(
     selectContactsBookState,
-    (state: fromContact.ContactsBookState) => state.contacts.map(contact => 
+    (state: fromContact.ContactsBookState) =>
+    state.contacts.map(contact => 
         ({firstName: contact.firstName,
         lastName: contact.lastName})
         )
