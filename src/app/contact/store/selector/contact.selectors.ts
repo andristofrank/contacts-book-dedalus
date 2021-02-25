@@ -11,3 +11,8 @@ export const selectContacts = createSelector(
         return state.contacts
     }
 );
+
+export const selectContact = createSelector(
+    selectContactsBookState,
+    (state: fromContact.ContactsBookState) => state.selectedContact
+);
