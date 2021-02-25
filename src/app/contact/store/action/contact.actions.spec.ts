@@ -8,6 +8,7 @@ describe('addContact', () => {
 
 describe('selectContact', () => {
   it('should return an action', () => {
+    // console.log(fromContact.selectContact);
     expect(fromContact.selectContact.type).toBe('[Contact] Select Contact');
   });
 });
