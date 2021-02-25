@@ -5,3 +5,9 @@ describe('addContact', () => {
     expect(fromContact.addContact.type).toBe('[Contact] Add Contact');
   });
 });
+
+describe('selectContact', () => {
+  it('should return an action', () => {
+    expect(fromContact.selectContact.type).toBe('[Contact] Select Contact');
+  });
+});
