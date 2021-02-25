@@ -5,14 +5,20 @@ export const selectContactsBookState = createFeatureSelector<fromContact.Contact
     fromContact.contactFeatureKey
 );
 
-export const selectContacts = createSelector(
+export const selectorContacts = createSelector(
     selectContactsBookState,
     (state: fromContact.ContactsBookState) => {
         return state.contacts
     }
 );
-
-export const selectContact = createSelector(
+export const selectorContactsSummary = createSelector(
+    selectContactsBookState,
+    (state: fromContact.ContactsBookState) => state.contacts.map(contact => 
+        ({firstName: contact.firstName,
+        lastName: contact.lastName})
+        )
+);
+export const selectorContact = createSelector(
     selectContactsBookState,
     (state: fromContact.ContactsBookState) => state.selectedContact
 );
