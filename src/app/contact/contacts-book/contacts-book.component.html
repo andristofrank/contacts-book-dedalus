@@ -1,12 +1,13 @@
-<div class="w-50 mx-3">
-    <div class="d-flex flex-row mt-5 mb-3">
-        <h3>Contacts Book</h3>
-        <div class="ml-auto">
-            <button class="btn btn-primary" (click)="openModal(addContactModalTemplate)">Add new contact</button>
-        </div>
-</div>
-<div class="table-responsive">
-    <table class="table table-striped">
+<div class="mx-auto d-flex flex-row mx-auto justify-content-center">
+    <div class="mr-5 w-50">
+        <div class="d-flex flex-row mb-3">
+            <h3>Contacts Book</h3>
+            <div class="ml-auto">
+                 <button class="btn btn-primary" (click)="openModal(addContactModalTemplate)">Add new contact</button>
+            </div>
+         </div>
+        <div class="table-responsive">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Index</th>
@@ -15,19 +16,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let contact of contacts$ | async; let i=index" (click)="selectContact(i)">
-                <td>{{i}}</td>
+            <tr *ngFor="let contact of contacts$ | async; let i=index"
+            [ngClass]="{'table-primary': i === selectedIndex}"
+            (click)="selectContact(i);">
+                <td>{{i+1}}</td>
                 <td>{{contact.firstName}}</td>
                 <td>{{contact.lastName}}</td>
             </tr>
         </tbody>
     </table>
-</div>
-</div>
-<div class="w-50">
-    <app-contact-details></app-contact-details>
+        </div>
+    </div>
+    <div class="ml-5 w-25">
+        <app-contact-details></app-contact-details>
+    </div>
 </div>
 
 <ng-template #addContactModalTemplate>
     <app-contact-add></app-contact-add>
+</ng-template>
+<ng-template #contactDetailsModalTemplate>
+    <app-contact-details></app-contact-details>
 </ng-template>

@@ -5,3 +5,7 @@ export class Contact {
     email: string;
     address: string;
 }
+export class ContactSummary {
+    firstName: string;
+    lastName: string;
+}
