@@ -7,12 +7,14 @@ export const contactFeatureKey = 'contact';
 
 export interface ContactsBookState {
   contacts: Contact[];
+  selectedContact: Contact;
 }
 
 export const initialState: ContactsBookState = {
   contacts: [
     {lastName: 'Andrei', firstName: 'Maxi', phone: '2424325', address: 'sdbsf bfr', email: 'fcaevew@br'}
-  ]
+  ],
+  selectedContact: new Contact(),
 };
 
 
@@ -24,6 +26,13 @@ export const contactReducer = createReducer(
         const contacts = [...state.contacts, contact];
         return {...state, contacts};
       }
+    ),
+  on(ContactActions.selectContact,
+    (state: ContactsBookState, {index}) => 
+    {
+      const selectedContact = state.contacts[index];
+      return {...state, selectedContact};
+    }
     )
 );
 
