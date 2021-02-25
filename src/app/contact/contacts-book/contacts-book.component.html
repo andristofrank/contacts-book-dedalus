@@ -3,7 +3,9 @@
         <div class="d-flex flex-row mb-3">
             <h3>Contacts Book</h3>
             <div class="ml-auto">
-                 <button class="btn btn-primary" (click)="openModal(addContactModalTemplate)">Add new contact</button>
+                 <button class="btn btn-primary"
+                 id="add-button"
+                 (click)="openModal(addContactModalTemplate)">Add new contact</button>
             </div>
          </div>
         <div class="table-responsive">
@@ -17,6 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let contact of contacts$ | async; let i=index"
+            id="contact-row-{{i}}"
             [ngClass]="{'table-primary': i === selectedIndex}"
             (click)="selectContact(i);">
                 <td>{{i+1}}</td>
@@ -34,7 +37,4 @@
 
 <ng-template #addContactModalTemplate>
     <app-contact-add></app-contact-add>
-</ng-template>
-<ng-template #contactDetailsModalTemplate>
-    <app-contact-details></app-contact-details>
 </ng-template>
