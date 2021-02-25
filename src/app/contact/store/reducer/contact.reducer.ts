@@ -12,7 +12,7 @@ export interface ContactsBookState {
 
 export const initialState: ContactsBookState = {
   contacts: [
-    {lastName: 'Andrei', firstName: 'Maxi', phone: '2424325', address: 'sdbsf bfr', email: 'fcaevew@br'}
+    {firstName: 'Wolfgang Amadeus', lastName: 'Mozart', phone: '27011756', email: 'wolfgang@art.au', address: 'St Stephen Cathedral Street'}
   ],
   selectedContact: new Contact(),
 };

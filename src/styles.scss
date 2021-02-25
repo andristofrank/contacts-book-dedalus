@@ -2,3 +2,22 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+#content {
+    flex-direction: column-reverse!important;
+    #contactsBook {
+        width: 90%!important;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #contactDetails {
+        width: 100%!important;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    }
+}
