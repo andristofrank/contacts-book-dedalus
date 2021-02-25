@@ -6,6 +6,7 @@ export const addContact = createAction(
   (contact: Contact) => ({contact})
 );
 
-
-
-
+export const selectContact = createAction(
+  '[Contact] Select Contact',
+  props<{ index: number }>()
+);
