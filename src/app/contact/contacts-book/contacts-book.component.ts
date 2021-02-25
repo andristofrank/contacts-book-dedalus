@@ -4,6 +4,7 @@ import { select } from '@ngrx/store';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Contact } from 'src/app/models/contact';
+import { selectContact } from '../store/action/contact.actions';
 import { ContactsBookState } from '../store/reducer/contact.reducer';
 import { selectContacts } from '../store/selector/contact.selectors';
 
@@ -21,6 +22,11 @@ export class ContactsBookComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  selectContact(index){
+    this.store.dispatch(selectContact({index}));
+  }
+
   openModal (content) {
     this.modalService.open(content, {size: 'lg', centered: true});
   }

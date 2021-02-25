@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let contact of contacts$ | async; let i=index">
+            <tr *ngFor="let contact of contacts$ | async; let i=index" (click)="selectContact(i)">
                 <td>{{i}}</td>
                 <td>{{contact.firstName}}</td>
                 <td>{{contact.lastName}}</td>
